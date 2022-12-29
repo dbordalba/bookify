@@ -1,7 +1,7 @@
 import axios from "axios";
 import AuthHeader from "./AuthHeader";
 
-const API_URL = "http://localhost/booking/public/api/";
+const API_URL = "http://localhost/booksAPI/public/api/";
 
 class BooksService{
 
