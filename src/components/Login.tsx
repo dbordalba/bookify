@@ -18,15 +18,24 @@ export default function Login () {
     const handleSubmit = async (e:any) => {
         e.preventDefault();
 
-        AuthService.login(email,password).then(response => {
-            if(response.message){
-                setError(response.message);
-            }
-            else{
-                setValidated(true);
-                navigate("/")
-            }
-        })
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            setValidated(true)
+    
+          }
+          else{
+            AuthService.login(email,password).then(response => {
+                if(response.message){
+                    
+                    setError(response.message);
+                }
+                else{
+                    setValidated(true);
+                    navigate("/")
+                }
+            })
+          }
+        
     
 
       }
